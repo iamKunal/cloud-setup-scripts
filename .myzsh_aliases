@@ -1,0 +1,16 @@
+alias push='git push origin master'
+
+alias apt-get=apt
+alias py=python
+alias py3=python3
+#list top 10 biggest directories/files
+alias disten='du -hsx * | sort -rh | head -10'
+
+export PATH=$HOME/.local/bin:$PATH
+
+# exa aliases
+alias ll="exa -l --git --time-style=long-iso --group-directories-first"
+alias l="exa -la --git --time-style=long-iso --group-directories-first"
+alias la="exa -lahg --git --time-style=long-iso --group-directories-first"
+alias ls="exa --group-directories-first"
+
