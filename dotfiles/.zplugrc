@@ -82,7 +82,19 @@ zplug "bhilburn/powerlevel9k", as:theme
 
 
 ###### Custom Plugins
+# zsh bell
 zplug "jpouellet/5278239", from:gist, use:zbell.sh
+
+
+#build and compile latest tmux from source.
+zplug "tmux/tmux", from:github, \
+  hook-build:"sh autogen.sh && ./configure && make && sudo make install"
+
+
+# oh my tmux
+zplug "gpakosz/.tmux", from:github, \
+  hook-build:"ln -s -f $ZPLUG_REPOS/gpakosz/.tmux/.tmux.conf $HOME/ && touch $HOME/.tmux.conf.local"
+
 ###### END Custom Plugins
 
 

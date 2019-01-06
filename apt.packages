@@ -1,5 +1,10 @@
 build-essential
 rake
+ncurses-base
+libncurses5-dev
+pkg-config
+libevent-dev
+autogen
 vim
 nano
 curl

@@ -5,7 +5,7 @@ sudo apt update
 
 sudo apt install -y $(cat apt.packages | sed "s/\n/ /g" )
 
-
+sudo apt remove -y tmux
 
 
 # create required directories
