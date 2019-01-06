@@ -85,7 +85,7 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
+HISTSIZE=100000
 SAVEHIST=100000
 # End of lines configured by zsh-newuser-install
 
