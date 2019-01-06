@@ -1,0 +1,9 @@
+set laststatus=2
+" set rtp+=/home/kunal/Documents/tools/powerline/powerline/bindings/vim
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='simple'
+"let g:airline_solarized_bg='dark'
+let g:airline_powerline_fonts = 1
+
+" set t_Co=256
+" let g:Powerline_symbols = "fancy"

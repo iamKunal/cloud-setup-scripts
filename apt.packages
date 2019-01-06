@@ -1,0 +1,7 @@
+build-essential
+rake
+vim
+nano
+curl
+zsh
+virtualenvwrapper

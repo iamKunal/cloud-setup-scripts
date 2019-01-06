@@ -1,0 +1,11 @@
+#if [ "$SHELL" = '/usr/bin/zsh' ]
+#then
+#    case $TERM in
+#        rxvt|*merm)
+#         precmd() { print -Pn "\e]0;%m:%~\a" }
+#         preexec () { print -Pn "\e]0;$1\a" }
+#         ;;
+#    esac
+#fi
+
+#DISABLE_AUTO_TITLE="false"

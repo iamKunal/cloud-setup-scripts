@@ -1,0 +1,90 @@
+
+####    ZPLUG    ######
+source ~/.zplug/init.zsh
+
+# ENHANCD
+zplug "b4b4r07/enhancd", use:init.sh
+
+# FZY
+ZPLUG_SUDO_PASSWORD="********"
+zplug "jhawthorn/fzy", \
+    as:command, \
+    rename-to:fzy, \
+    hook-build:"make && sudo make install"
+
+# EXA
+zplug "ogham/exa", \
+    from:gh-r, \
+    as:command, \
+    rename-to:exa
+
+
+
+##### ZDHARMA
+# history search multiword
+zstyle ":history-search-multi-word" page-size "8"                      # Number of entries to show (default is $LINES/3)
+zstyle ":history-search-multi-word" highlight-color "fg=yellow,bold"   # Color in which to highlight matched, searched text (default bg=17 on 256-color terminals)
+zstyle ":plugin:history-search-multi-word" synhl "yes"                 # Whether to perform syntax highlighting (default true)
+zstyle ":plugin:history-search-multi-word" active "underline"          # Effect on active history entry. Try: standout, bold, bg=blue (default underline)
+zstyle ":plugin:history-search-multi-word" check-paths "yes"           # Whether to check paths for existence and mark with magenta (default true)
+zstyle ":plugin:history-search-multi-word" clear-on-cancel "no"        # Whether pressing Ctrl-C or ESC should clear entered query
+zplug "zdharma/fast-syntax-highlighting"
+
+zplug "zdharma/history-search-multi-word"
+#zplug "zdharma/zsh-diff-so-fancy" #, as:command, use:bin/git-dsf
+zplug "zdharma/zui"
+#zplug "zdharma/zbrowse"
+##### END ZDHARMA
+
+##### ZSH-USERS
+zplug "zsh-users/zsh-autosuggestions", use:zsh-autosuggestions.zsh
+#zplug "zsh-users/zsh-completions"
+
+
+#### OMZ
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/extract", from:oh-my-zsh
+
+
+#####    THEME - powerlevel9k
+DEFAULT_USER='ubuntu'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( dir_writable virtualenv dir rbenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs command_execution_time ram vi_mode ssh)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
+POWERLEVEL9K_USER_ICON="\uf155" #   "\ue7a2" #"§" #"Ξ" #"\uF415"
+POWERLEVEL9K_ALWAYS_SHOW_USER=false
+#POWERLEVEL9K_HOME_FOLDER_ABBREVIATION="%F{red} $(print_icon 'HOME_ICON') %F{black}"
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_USER_TEMPLATE=""
+POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$'\ue0c6' #'\uE0C0 ' #'\uE0C0'
+POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=$'\uE0BA'
+POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=$' \uE0BB0'
+POWERLEVEL9K_DIR_HOME_FOREGROUND='016'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='016'
+#POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='234'
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='016'
+POWERLEVEL9K_TIME_FOREGROUND='016'
+POWERLEVEL9K_STATUS_OK_BACKGROUND='016'
+
+POWERLEVEL9K_VI_INSERT_MODE_STRING=""
+
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{green} \uf155 ❯%f "
+
+#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug "bhilburn/powerlevel9k", as:theme
+#zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+#zplug "themes/nanotech", from:oh-my-zsh
+###### END THEME
+
+
+###### Custom Plugins
+zplug "jpouellet/5278239", from:gist, use:zbell.sh
+###### END Custom Plugins
+
+
+zplug load
+

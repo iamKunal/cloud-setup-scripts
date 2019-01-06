@@ -1,0 +1,16 @@
+
+### run in tmux
+if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
+    tmux attach-session -t amazon || tmux new-session -s amazon
+fi
+
+
+
+
+#Pick item but stay in the menu
+bindkey -M menuselect "+" accept-and-menu-complete
+
+# Virtualenvwrapper things
+export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/Devel
+source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
