@@ -1,5 +1,11 @@
 
 ### run in tmux
+
+if [[ -z "$TMUX" ]]; then
+    print -P "%F{red}Please use tmux for this session.%f"
+fi
+
+
 if [[ -z "$TMUX" ]] && [ "$SSH_CONNECTION" != "" ]; then
     tmux attach-session -t amazon || tmux new-session -s amazon
 fi
