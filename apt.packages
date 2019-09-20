@@ -12,3 +12,5 @@ zsh
 virtualenvwrapper
 autotools-dev
 automake
+bison
+flex
